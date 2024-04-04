@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnD Tools</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #808080; /* Sets the background color to gray */
+        }
+        header {
+            position: relative;
+            width: 100%;
+        }
+        .welcome-message {
+            position: absolute;
+            width: 100%;
+            top: 40%; /* Adjust if needed */
+            left: 0;
+            font-size: 24px;
+            color: white;
+            text-align: center;
+        }
+        hr {
+            width: 60%;
+            border: 0;
+            height: 2px;
+            background-color: #fff;
+            margin: 10px auto; /* Adjust if needed for spacing */
+        }
+        .character-creation-link {
+            position: absolute;
+            width: 100%;
+            top: 45%; /* Slightly higher, just below the Welcome line */
+            left: 0;
+            font-size: 20px;
+            text-align: center;
+            margin: auto;
+        }
+        .character-creation-link a {
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            color: black; /* Text color for the link */
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block; /* Allows margin for auto centering */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='pics/HomeHeader.png') }}" alt="Welcome Banner" style="width: 100%; height: auto;">
+        <div class="welcome-message">
+            Welcome!
+            <hr>
+        </div>
+        <div class="character-creation-link">
+            <a href="{{ url_for('manual_character_creation') }}">Manual Character Creation</a>
+        </div>
+    </header>
+    <footer>
+    </footer>
+</body>
+</html>
+

@@ -10,6 +10,17 @@ def home():
 def manual_character_creation():
     return render_template('character_creation.html')
 
+@app.route('/smart-character-creation')
+def smart_character_creation():
+    # Your logic here
+    return render_template('smart_character_creation.html')
+
+@app.route('/books')
+def books():
+    # Your logic here
+    return render_template('books.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 

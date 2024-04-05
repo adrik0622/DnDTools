@@ -12,6 +12,30 @@
             height: 100%;
             background-color: #808080; /* Sets the background color to gray */
         }
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333; /* Darker shade for contrast */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000; /* Ensure it stays on top of other content */
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333; /* Same color as the header for consistency */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        body {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
         header {
             position: relative;
             width: 100%;
@@ -19,7 +43,7 @@
         .welcome-message {
             position: absolute;
             width: 100%;
-            top: 40%; /* Adjust if needed */
+            top: 35%; /* Adjusted for even spacing */
             left: 0;
             font-size: 24px;
             color: white;
@@ -32,16 +56,15 @@
             background-color: #fff;
             margin: 10px auto; /* Adjust if needed for spacing */
         }
-        .character-creation-link {
+        .link-button {
             position: absolute;
             width: 100%;
-            top: 45%; /* Slightly higher, just below the Welcome line */
             left: 0;
             font-size: 20px;
             text-align: center;
             margin: auto;
         }
-        .character-creation-link a {
+        .link-button a {
             background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
             color: black; /* Text color for the link */
             text-decoration: none;
@@ -49,21 +72,36 @@
             border-radius: 5px;
             display: inline-block; /* Allows margin for auto centering */
         }
+        .manual {
+            top: 42%; /* Adjusted for even spacing */
+        }
+        .smart {
+            top: 49%; /* Adjusted for even spacing */
+        }
+        .books {
+            top: 56%; /* Adjusted for even spacing */
+        }
     </style>
 </head>
 <body>
+    <div class="sticky-header">----------------------------</div>
     <header>
         <img src="{{ url_for('static', filename='pics/HomeHeader.png') }}" alt="Welcome Banner" style="width: 100%; height: auto;">
         <div class="welcome-message">
             Welcome!
             <hr>
         </div>
-        <div class="character-creation-link">
+        <div class="link-button manual">
             <a href="{{ url_for('manual_character_creation') }}">Manual Character Creation</a>
         </div>
+        <div class="link-button smart">
+            <a href="{{ url_for('smart_character_creation') }}">Smart Character Creation</a>
+        </div>
+        <div class="link-button books">
+            <a href="{{ url_for('books') }}">Books</a>
+        </div>
     </header>
-    <footer>
-    </footer>
+    <div class="footer">----------------------------</div>
 </body>
 </html>
 
